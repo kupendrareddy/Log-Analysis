@@ -45,7 +45,7 @@ FROM log WHERE status like '%404%'
 GROUP BY status, day
 ORDER BY stat desc limit 3;
 ```
-<h4>total_viewers</h4>
+*<h4>total_viewers</h4>
 ```sql
 CREATE VIEW total_viewers AS
 SELECT count(*) as viewers,
@@ -53,7 +53,7 @@ cast(time as date) as err_time
 FROM log
 GROUP BY err_time;
 ```
-<h4>err_count</h4>
+*<h4>err_count</h4>
 ```sql
 
 CREATE VIEW err_count AS
