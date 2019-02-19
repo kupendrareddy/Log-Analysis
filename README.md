@@ -2,15 +2,12 @@
 This Project is the part of the Udacity's Full Stack Web Developer Nanodegree
 
 ##PROJECT OVERVIEW
-This is the solution for the Log Analysis project in Udacity's Full Stack Web Developer Nanodegree course.In this project we have to
+This is the solution for the Log Analysis project in Udacity'sFull Stack Web Developer Nanodegree course.In this project we have to
 execute three queries on large database.The queries as follows
  * Most popular three articles of all time.
  * Most popular article authors of all time.
  * Days on which more than 1% of requests lead to error.
 
-## Helpful Resources
-* [PEP 8 -- Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008/)
-* [PostgreSQL 9.5 Documentation](https://www.postgresql.org/docs/9.5/static/index.html)
 
  
 ## Requirements
@@ -26,13 +23,14 @@ The code is error free and conforms PEP8 style recommendations.
 ## system setup and how to access this project
 1. If you dont have the latest version of python download it from the link given above.
 2. download and install vagrant and virtual box.
-3. Download the **newsdata.sql** (extract from **LogAnalysis.zip** ) and **log.py** files and move them to your **vagrant** directory within your VM.
+3. Download the **newsdata.sql** (extract from **newsdata.zip** ) and **newsdata.py** files from the    
+   respository and move them to your **vagrant** directory within your VM.
 
 ## RUN THESE COMMANDS FROM THE TERMINAL IN THE FOLDER WHERE YOUR VAGRANT IS INSTALLED
 
 1. ```vagrant up``` to start up the VM.
 2. ```vagrant ssh``` to log into the VM.
-3. ```cd /vagrant/LogAnalysis``` to change to your vagrant directory.
+3. ```cd /vagrant``` to change to your vagrant directory.
 4. ```psql -d news -f newsdata.sql``` to load the data and create the tables.
 5. ```python log.py``` to run the reporting tool.
 
@@ -57,6 +55,7 @@ GROUP BY err_time;
 ```
 <h4>err_count</h4>
 ```sql
+
 CREATE VIEW err_count AS
 SELECT * from log_star join total_viewers
 ON log_star.day = total_viewers.err_time;
